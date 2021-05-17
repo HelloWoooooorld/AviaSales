@@ -1,7 +1,3 @@
-import {
-    BrowserRouter as Router,
-    Link
-} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import './header.css';
 
@@ -15,8 +11,8 @@ const Header = () => {
     return (
         <header>
             <div className="container">
-                <Link onClick={() => moToUrl('')} className="logo">Aviasales</Link>
-                <Link onClick={() => moToUrl('login')} className="nav-visible-seach button">Login</Link>
+                <a onClick={() => moToUrl('')} className="logo">Aviasales</a>
+                <a  onClick={() => moToUrl('login')} className="nav-visible-seach button">Login</a>
             </div>
         </header>
     )
