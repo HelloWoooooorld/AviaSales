@@ -1,6 +1,12 @@
+import Filter from './components/filter';
+import TicketList from './components/ticketList';
+
 const Home = () => {
     return (
-        <h1>Home</h1>
+       <div>
+            <Filter/>
+            <TicketList/>
+       </div>
     )
 }
 
