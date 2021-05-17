@@ -17,11 +17,16 @@ header {
 .logo {
 	margin: auto 0;
 	padding-right: 50px;
-
+	transition: all .2s;
 	font-size: 1.6em;
 	font-weight: bold;
 	color: #fff;
 	text-align: center;
+}
+
+.logo:hover {
+	color: #000;
+
 }
 
 .button {
@@ -33,10 +38,11 @@ header {
 .nav-hidden-seach {
 	display: none;
 }
-a:hover {
-	color: #42a5f5;
-	background-color: #fff;
+a {
+	text-decoration: none;
+	cursor: pointer;
 }
+
 @media screen and (max-width: 960px) {
 	.container {
 		flex-direction: column;

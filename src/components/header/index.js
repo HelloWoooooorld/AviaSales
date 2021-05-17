@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <header>
             <div className="container">
-                <div className="logo">Aviasales</div>
+                <Link onClick={() => moToUrl('')} className="logo">Aviasales</Link>
                 <Link onClick={() => moToUrl('login')} className="nav-visible-seach button">Login</Link>
             </div>
         </header>

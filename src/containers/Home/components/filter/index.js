@@ -8,8 +8,8 @@ const Filter = () => {
     return (
        <div className='filter__wrapper'>
            <div className='filter'>
-            <h1 className='filter__title'>Количество Пересадок</h1>
             <div className='filter__list'>
+            <h1 className='filter__title'>Количество Пересадок</h1>
                 {filterNames.map(name => (
                     <FilterItem key={name} name={name}/>
                 ))}
