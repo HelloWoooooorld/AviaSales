@@ -1,12 +1,11 @@
-.wrapper {
+.filter__wrapper {
     min-width: 232px;
     height: 252px;
 }
 
-
 .filter {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: stretch;
     flex-direction: column;
 }

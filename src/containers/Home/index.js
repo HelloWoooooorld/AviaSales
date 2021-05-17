@@ -4,10 +4,13 @@ import './home.css';
 
 const Home = () => {
     return (
-       <div className='home'>
-            <Filter/>
-            <TicketList/>
-       </div>
+        <>
+        <div className='logo__plane'></div>
+        <div className='home'>
+            <Filter />
+            <TicketList />
+        </div>
+        </>
     )
 }
 

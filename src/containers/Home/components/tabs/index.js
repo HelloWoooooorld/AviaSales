@@ -4,8 +4,8 @@ const Tabs = () => {
     const tabsName = ['Самый Дешевый', 'Самый Быстрый', 'Оптимальный'];
 
     return (
-        <div>
-            {tabsName.map(i => <button key={i} className="btn btn__tab">{i}</button>)} 
+        <div className='tab__container'>
+            {tabsName.map(i => <button key={i} className="btn">{i}</button>)} 
         </div>
     )
 }

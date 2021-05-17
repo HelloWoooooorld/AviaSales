@@ -6,7 +6,7 @@ const filterNames = ['Все', 'Без пересадок', '1 Пересадк�
 
 const Filter = () => {
     return (
-       <div className='wrapper'>
+       <div className='filter__wrapper'>
            <div className='filter'>
             <h1 className='filter__title'>Количество Пересадок</h1>
             <div className='filter__list'>
