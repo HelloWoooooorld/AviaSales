@@ -1,6 +1,16 @@
+import Filter from './components/filter';
+import TicketList from './components/ticketList';
+import './home.css';
+
 const Home = () => {
     return (
-        <h1>Home</h1>
+        <>
+        <div className='logo__plane'></div>
+        <div className='home'>
+            <Filter />
+            <TicketList />
+        </div>
+        </>
     )
 }
 

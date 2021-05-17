@@ -1,69 +1,48 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-}
 header {
 	width: 100%;
 	height: 80px;
-	
-	background-color: #42A5F5;
+	background-color: #42a5f5;
 }
 .container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	
+
 	width: 960px;
 	height: 100%;
-	
-	margin: 0 auto;	
+
+	margin: 0 auto;
 }
 .logo {
 	margin: auto 0;
 	padding-right: 50px;
-	
+	transition: all .2s;
 	font-size: 1.6em;
 	font-weight: bold;
 	color: #fff;
 	text-align: center;
 }
-nav {
-	margin: auto 0;
+
+.logo:hover {
+	color: #000;
+
 }
-nav ul {
-	padding: 0;	
-	display: flex;
-}
-nav ul li {
-	list-style: none;
-	padding: 10px;
-}
-nav ul li:first-child {
-	padding-left: 0;
-}
-nav ul li a {
-	text-decoration: none;
-	color: #fff;
-}
+
 .button {
 	margin: auto 0;
-	
+
 	text-decoration: none;
 	color: #fff;
 }
 .nav-hidden-seach {
-	display: none;	
+	display: none;
 }
-a:hover {
-	color: #42A5F5;
-	background-color: #fff;
+a {
+	text-decoration: none;
+	cursor: pointer;
 }
+
 @media screen and (max-width: 960px) {
 	.container {
 		flex-direction: column;
@@ -75,13 +54,6 @@ a:hover {
 	}
 	.logo {
 		padding-right: 0;
-	}
-	.nav-hidden-seach {
-		display: initial;
-	}
-	.nav-visible-seach {
-		display: none;
-		padding: 10px 0;
 	}
 }
 @media screen and (max-width: 510px) {

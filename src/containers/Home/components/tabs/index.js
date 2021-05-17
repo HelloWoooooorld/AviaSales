@@ -1,9 +1,12 @@
-
 import './tabs.css';
 
 const Tabs = () => {
+    const tabsName = ['Самый Дешевый', 'Самый Быстрый', 'Оптимальный'];
+
     return (
-        <h1>tabs</h1>
+        <div className='tab__container'>
+            {tabsName.map(i => <button key={i} className="btn">{i}</button>)} 
+        </div>
     )
 }
 
