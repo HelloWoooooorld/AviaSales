@@ -6,8 +6,13 @@ import Tabs from '../tabs/index';
 const TicketList = () => {
     return (
         <>
-            <Tabs />
-            <Ticket />
+            <div className='ticketList'>
+                <Tabs />
+                <Ticket />
+                <Ticket />
+                <Ticket />
+                <Ticket />
+            </div>
         </>
     )
 }
