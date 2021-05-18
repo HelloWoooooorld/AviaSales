@@ -1,11 +1,11 @@
 import './tabs.css';
 
-const Tabs = () => {
+const Tabs = ({getValueFromToolBar}) => {
     const tabsName = ['Самый Дешевый', 'Самый Быстрый', 'Оптимальный'];
 
     return (
         <div className='tab__container'>
-            {tabsName.map(i => <button key={i} className="btn">{i}</button>)} 
+            {tabsName.map((item,i) => <button key={i} id={i} onClick={(event) => getValueFromToolBar(event)} className="btn">{item}</button>)} 
         </div>
     )
 }
