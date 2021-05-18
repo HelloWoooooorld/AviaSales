@@ -2,7 +2,6 @@
 import './ticket.css';
 
 const Ticket = ({item}) => {
-    console.log(item);
     return (
         <div className='wrapper'>
             <div className='ticket'>
