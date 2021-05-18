@@ -11,19 +11,40 @@ const Row = ({ segments }) => {
         }
     }
 
-
     const convertDate = (dateNum) => {
-        let date = new Date(dateNum);
-        console.log(date.getUTCHours()); // Hours
-        console.log(date.getUTCMinutes());
+        const date = new Date(dateNum);
+        const res = date.toString().slice(16, 21)
+        return res;
     }
 
+    const convertDurationToHours = (date) => {
+        const duration = convertMinToHours(segments.duration)
+        const dateOrigin = convertDate(date)
+        const resDurationHours = duration.slice(0, 2)
+        const resOriginHours = dateOrigin.slice(0, 2)
+        const resDurationMin = duration.slice(4, 7)
+        const resOriginMin = dateOrigin.slice(3, 5)
+
+        let hours = +resDurationHours + +resOriginHours
+        let min = +resDurationMin + +resOriginMin
+        if (min > 60) {
+            min -= 60
+            hours += 1
+        };
+        if (hours > 24) {
+            hours -= 24
+        };
+        if (min < 10) min = "0" + min;
+        return `${hours}:${min}`
+    }
+
+    convertDurationToHours();
 
     return (
         <>
             <div className='ticket__item-part'>
                 <span>{segments.origin}-{segments.destination}</span>
-                <span>10:45 - 08:00</span>
+                <span>{convertDate(segments.date)} - {convertDurationToHours((segments.date))}</span>
             </div>
             <div className='ticket__item-part'>
                 <span>В ПУТИ</span>

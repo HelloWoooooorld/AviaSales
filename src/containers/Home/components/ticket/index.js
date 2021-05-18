@@ -3,6 +3,7 @@ import './ticket.css';
 import Row from './components/row';
 
 const Ticket = ({ item }) => {
+    console.log(item);
     return (
         <div className='wrapper'>
             <div className='ticket'>
@@ -22,5 +23,5 @@ const Ticket = ({ item }) => {
         </div>
     )
 }
-
+// 16 25
 export default Ticket;
