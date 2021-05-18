@@ -1,5 +1,6 @@
 
 import './ticket.css';
+import Row from './components/row';
 
 const Ticket = () => {
     return (
@@ -11,32 +12,10 @@ const Ticket = () => {
                 </div>
                 <div className='ticket__list'>
                     <div className='ticket__item--from'>
-                        <div className='ticket__item-part'>
-                            <span>MOV-HKT</span>
-                            <span>10:45 - 08:00</span>
-                        </div>
-                        <div className='ticket__item-part'>
-                            <span>В ПУТИ</span>
-                            <span>21ч 15м</span>
-                        </div>
-                        <div className='ticket__item-part'>
-                            <span>2 ПЕРЕСАДКИ</span>
-                            <span>HKG, JNB</span>
-                        </div>
+                        <Row />
                     </div>
                     <div className='ticket__item--to'>
-                        <p className='ticket__item-part'>
-                            <span>MOV-HKT</span>
-                            <span>11:15 - 04:20</span>
-                        </p>
-                        <p className='ticket__item-part'>
-                            <span>В ПУТИ</span>
-                            <span>21ч 15м</span>
-                        </p>
-                        <p className='ticket__item-part'>
-                            <span>1 ПЕРЕСАДКИ</span>
-                            <span>HKG</span>
-                        </p>
+                        <Row />
                     </div>
                 </div>
             </div>
