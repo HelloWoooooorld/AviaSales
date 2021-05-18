@@ -2,7 +2,7 @@ class AviaService {
     async getResources(url) {
         const res = await fetch(url)
         if (!res.ok) {
-            throw new Error(`Pizdos`)
+            throw new Error(`${res.status}, Pogano`)
         }
         return await res.json();
     }
@@ -11,15 +11,13 @@ class AviaService {
         return this.getResources('https://front-test.beta.aviasales.ru/search');
     }
 
-    async getIdFromObj() {
+
+    async getTicketFromId() {
         const res = await this.getId();
-        return res.searchId
+        const id = res.searchId;
+        return await this.getResources(`https://front-test.beta.aviasales.ru/tickets?searchId=${id}`)
     }
-
-    getTicketFromId() {
-        return this.getResources(`https://front-test.beta.aviasales.ru/tickets?searchId=${this.getIdFromObj()}`)
-    }
+  
 }
-
 
 export default AviaService;

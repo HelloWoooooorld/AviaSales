@@ -1,12 +1,13 @@
 
 import './ticket.css';
 
-const Ticket = () => {
+const Ticket = ({item}) => {
+    console.log(item);
     return (
         <div className='wrapper'>
             <div className='ticket'>
                 <div className='ticket__head'>
-                    <h2>13 400</h2>
+                    <h2>11 200</h2>
                     <div className='ticket__logo'></div>
                 </div>
                 <div className='ticket__list'>
