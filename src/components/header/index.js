@@ -1,31 +1,24 @@
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './header.css';
 
 const Header = ({ user, signout }) => {
-  let history = useHistory();
-  console.log(user, 'from header');
-
-  const moveToUrl = (way) => {
-    history.push(`/${way}`);
-  };
-
   return (
     <header>
       <div className='container'>
-        <a onClick={() => moveToUrl('')} className='logo'>
+        <Link to='/' className='logo'>
           Aviasales
-        </a>
+        </Link>
 
         {user ? (
-          <a onClick={signout} className='nav-visible-seach button'>
+          <Link to='/' onClick={signout} className='nav-visible-seach button'>
             Logout
-          </a>
+          </Link>
         ) : (
-          <a
-            onClick={() => moveToUrl('login')}
+          <Link
+            to='/login'
             className='nav-visible-seach button'>
             Login
-          </a>
+          </Link>
         )}
       </div>
     </header>

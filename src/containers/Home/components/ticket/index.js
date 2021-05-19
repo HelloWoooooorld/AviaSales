@@ -12,10 +12,10 @@ const Ticket = ({ item }) => {
                 </div>
                 <div className='ticket__list'>
                     <div className='ticket__item--from'>
-                        <Row key={item.priceIdx} segments={item.segments[0]} />
+                        <Row item={item} segments={item.segments[0]} />
                     </div>
                     <div className='ticket__item--to'>
-                        <Row key={item.priceIdx} segments={item.segments[1]} />
+                        <Row item={item} segments={item.segments[1]} />
                     </div>
                 </div>
             </div>
