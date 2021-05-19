@@ -3,7 +3,6 @@ import './ticket.css';
 import Row from './components/row';
 
 const Ticket = ({ item }) => {
-    console.log(item);
     return (
         <div className='wrapper'>
             <div className='ticket'>
@@ -13,10 +12,10 @@ const Ticket = ({ item }) => {
                 </div>
                 <div className='ticket__list'>
                     <div className='ticket__item--from'>
-                        <Row segments={item.segments[0]} />
+                        <Row key={item.priceIdx} segments={item.segments[0]} />
                     </div>
                     <div className='ticket__item--to'>
-                        <Row segments={item.segments[1]} />
+                        <Row key={item.priceIdx} segments={item.segments[1]} />
                     </div>
                 </div>
             </div>
