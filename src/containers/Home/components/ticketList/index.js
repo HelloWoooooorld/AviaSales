@@ -1,4 +1,3 @@
-
 import './ticketList.css';
 import Ticket from '../ticket/index';
 import Tabs from '../tabs/index';
@@ -42,7 +41,6 @@ const TicketList = () => {
                 const filteredDuration = ticket.sort((a, b) => a.segments[0].duration - b.segments[0].duration)
                 const addIndexToFilteredDuration = filteredDuration.map((item, i) => item.durrIdx = i)
                 // add duration ID
-
                 const addResIndex = ticket.map((item) => item.res = item.priceIdx + item.durrIdx)
                 const filteredFromResIndex = ticket.sort((a, b) => a.res - b.res);
                 // sum result price and durr
@@ -54,16 +52,12 @@ const TicketList = () => {
             }
         }
         setTicket([...result])
-        console.log(ticket);
     }
-
 
     return (
         <>
             <div className='ticketList'>
                 <Tabs getValueFromToolBar={getValueFromToolBar} />
-
-                {console.log(ticket.slice(0, 5))}
                 {
                     ticket.length && ticket.slice(0, listItem).map(item => <Ticket key={item.price} item={item} />)
                 }
