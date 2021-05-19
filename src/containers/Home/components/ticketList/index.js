@@ -13,7 +13,7 @@ const TicketList = () => {
 
     const getObj = async () => {
         const meta = await avia.getTicketFromId();
-        return res(meta.tickets);
+        return setTicket(meta.tickets);
     }
 
     const addTicketItems = () => {
@@ -24,17 +24,16 @@ const TicketList = () => {
         getObj();
     }, [])
 
-
-
-    const res = (data) => setTicket(data);
-
     const getValueFromToolBar = (e) => {
+        let result;
         switch (e.target.id) {
             case '0': {
-                return setTicket(prev => prev.sort((a, b) => a.price - b.price))
+                result = ticket.sort((a, b) => a.price - b.price)
+                break;
             }
             case '1': {
-                return setTicket(prev => prev.sort((a, b) => a.duration - b.duration))
+                result = ticket.sort((a, b) => a.segments[0].duration - b.segments[0].duration)
+                break;
             }
             case '2': {
                 const filteredPrice = ticket.sort((a, b) => a.price - b.price)
@@ -47,10 +46,15 @@ const TicketList = () => {
                 const addResIndex = ticket.map((item) => item.res = item.priceIdx + item.durrIdx)
                 const filteredFromResIndex = ticket.sort((a, b) => a.res - b.res);
                 // sum result price and durr
-
-                return setTicket(filteredFromResIndex);
+                result = filteredFromResIndex
+                break;
+            }
+            default: {
+                return result
             }
         }
+        setTicket([...result])
+        console.log(ticket);
     }
 
 
