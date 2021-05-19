@@ -13,7 +13,7 @@ const TicketList = () => {
 
     const getObj = async () => {
         const meta = await avia.getTicketFromId();
-        return res(meta.tickets);
+        return setTicket(meta.tickets);
     }
 
     const addTicketItems = () => {
@@ -23,8 +23,6 @@ const TicketList = () => {
     useEffect(() => {
         getObj();
     }, [])
-
-    const res = (data) => setTicket(data);
 
     return (
         <>
