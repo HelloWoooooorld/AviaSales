@@ -11,12 +11,12 @@ import Login from '../containers/Login/index';
 const Routes = () => {
     return (
         <Router>
-            <Header/>
+            <Header />
             <Switch>
                 <Route path='/login'>
-                    <Login/>
+                    <Login />
                 </Route>
-                <Route exact path='/' component={Home} />
+                <PrivateRoute path='/' component={Home} />
             </Switch>
         </Router>
     )
