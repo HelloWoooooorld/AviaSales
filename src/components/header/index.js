@@ -1,21 +1,35 @@
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import './header.css';
 
-const Header = () => {
-    let history = useHistory();
+const Header = ({ user, signout }) => {
+  let history = useHistory();
+  console.log(user, 'from header');
 
-    const moToUrl = (way) => {
-        history.push(`/${way}`);
-    }
+  const moveToUrl = (way) => {
+    history.push(`/${way}`);
+  };
 
-    return (
-        <header>
-            <div className="container">
-                <a onClick={() => moToUrl('')} className="logo">Aviasales</a>
-                <a  onClick={() => moToUrl('login')} className="nav-visible-seach button">Login</a>
-            </div>
-        </header>
-    )
-}
+  return (
+    <header>
+      <div className='container'>
+        <a onClick={() => moveToUrl('')} className='logo'>
+          Aviasales
+        </a>
+
+        {user ? (
+          <a onClick={signout} className='nav-visible-seach button'>
+            Logout
+          </a>
+        ) : (
+          <a
+            onClick={() => moveToUrl('login')}
+            className='nav-visible-seach button'>
+            Login
+          </a>
+        )}
+      </div>
+    </header>
+  );
+};
 
 export default Header;
