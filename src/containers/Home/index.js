@@ -34,7 +34,7 @@ const Home = () => {
             setFilteredTicket(filteredTicket => filteredTicket.filter(item => filters.includes(item.segments[1].stops.length.toString())))
             console.log(filteredTicket)
         } else {
-            return setFilteredTicket(ticketsItems)
+            setFilteredTicket(ticketsItems)
         }
     }
 
@@ -76,6 +76,7 @@ const Home = () => {
             }
         }
         setFilteredTicket([...result])
+        setTicketsItems([...result])
     }
 
     return (
@@ -83,7 +84,7 @@ const Home = () => {
             <div className='logo__plane'></div>
             <div className='home'>
                 <Filter getIdfromFilterInput={getIdfromFilterInput} />
-                <TicketList filteredTicket={filteredTicket} getValueFromToolBar={getValueFromToolBar} addTicketItems={addTicketItems} listItem={listItem} />
+                <TicketList filteredTicket={filteredTicket.length === 0 ? ticketsItems : filteredTicket} getValueFromToolBar={getValueFromToolBar} addTicketItems={addTicketItems} listItem={listItem} />
             </div>
         </>
     )
