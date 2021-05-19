@@ -37,20 +37,18 @@ const TicketList = () => {
                 return setTicket(prev => prev.sort((a, b) => a.duration - b.duration))
             }
             case '2': {
-                let filteredPrice = ticket.sort((a, b) => a.price - b.price)
-                console.log(filteredPrice)
+                const filteredPrice = ticket.sort((a, b) => a.price - b.price)
+                const addIndexToFilteredPrice = ticket.map((item, i) => item.priceIdx = i)
+                // add price ID
+                const filteredDuration = ticket.sort((a, b) => a.segments[0].duration - b.segments[0].duration)
+                const addIndexToFilteredDuration = filteredDuration.map((item, i) => item.durrIdx = i)
+                // add duration ID
 
-                filteredPrice = filteredPrice.forEach((item, i) => item.priceIdx = i)
-                filteredPrice = filteredPrice.forEach((item, i) => item.durationIdx = i)
-                console.log(filteredPrice)
+                const addResIndex = ticket.map((item) => item.res = item.priceIdx + item.durrIdx)
+                const filteredFromResIndex = ticket.sort((a, b) => a.res - b.res);
+                // sum result price and durr
 
-                // filteredArray = filteredArray.map((item) => item.result = (item.priceIdx + item.durationIdx) / 2)
-                // console.log(filteredArray)
-
-                // filteredArray.sort((a, b) => a.result - b.result);
-                // console.log(filteredArray)
-
-
+                return setTicket(filteredFromResIndex);
             }
         }
     }
