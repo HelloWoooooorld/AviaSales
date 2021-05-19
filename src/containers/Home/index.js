@@ -51,22 +51,22 @@ const Home = () => {
         let result;
         switch (e.target.id) {
             case '0': {
-                result = ticketsItems.sort((a, b) => a.price - b.price)
+                result = filteredTicket.sort((a, b) => a.price - b.price)
                 break;
             }
             case '1': {
-                result = ticketsItems.sort((a, b) => a.segments[0].duration - b.segments[0].duration)
+                result = filteredTicket.sort((a, b) => a.segments[0].duration - b.segments[0].duration)
                 break;
             }
             case '2': {
-                const filteredPrice = ticketsItems.sort((a, b) => a.price - b.price)
-                const addIndexToFilteredPrice = ticketsItems.map((item, i) => item.priceIdx = i)
+                const filteredPrice = filteredTicket.sort((a, b) => a.price - b.price)
+                const addIndexToFilteredPrice = filteredTicket.map((item, i) => item.priceIdx = i)
                 // add price ID
-                const filteredDuration = ticketsItems.sort((a, b) => a.segments[0].duration - b.segments[0].duration)
+                const filteredDuration = filteredTicket.sort((a, b) => a.segments[0].duration - b.segments[0].duration)
                 const addIndexToFilteredDuration = filteredDuration.map((item, i) => item.durrIdx = i)
                 // add duration ID
-                const addResIndex = ticketsItems.map((item) => item.res = item.priceIdx + item.durrIdx)
-                const filteredFromResIndex = ticketsItems.sort((a, b) => a.res - b.res);
+                const addResIndex = filteredTicket.map((item) => item.res = item.priceIdx + item.durrIdx)
+                const filteredFromResIndex = filteredTicket.sort((a, b) => a.res - b.res);
                 // sum result price and durr
                 result = filteredFromResIndex
                 break;
@@ -83,7 +83,7 @@ const Home = () => {
             <div className='logo__plane'></div>
             <div className='home'>
                 <Filter getIdfromFilterInput={getIdfromFilterInput} />
-                <TicketList filteredTicket={filteredTicket.length === 0 ? ticketsItems : filteredTicket} getValueFromToolBar={getValueFromToolBar} addTicketItems={addTicketItems} listItem={listItem} />
+                <TicketList filteredTicket={filteredTicket} getValueFromToolBar={getValueFromToolBar} addTicketItems={addTicketItems} listItem={listItem} />
             </div>
         </>
     )

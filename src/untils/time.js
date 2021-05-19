@@ -1,5 +1,4 @@
 export const convertDurationToHours = (date, durr) => {
-    console.log(durr)
     const duration = convertMinToHours(durr)
     const dateOrigin = convertDate(date)
     const resDurationHours = duration.slice(0, 2)
