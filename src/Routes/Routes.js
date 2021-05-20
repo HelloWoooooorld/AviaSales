@@ -11,7 +11,7 @@ import { useAuth } from '../hooks/useAuth';
 
 
 const Routes = () => {
-    const { user, signout } = useAuth();
+    const { user, signout, login } = useAuth();
 
     return (
         <Router>

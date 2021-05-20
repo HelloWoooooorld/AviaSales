@@ -1,7 +1,7 @@
 import Filter from './components/filter';
 import TicketList from './components/ticketList';
 import AviaService from '../../services/index';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import './home.css';
 
 const Home = () => {
@@ -46,32 +46,32 @@ const Home = () => {
     let result;
     switch (e.target.id) {
       case '0': {
-        result = filteredTicket.sort((a, b) => a.price - b.price);
+        result = ticketsItems.sort((a, b) => a.price - b.price);
         break;
       }
       case '1': {
-        result = filteredTicket.sort(
+        result = ticketsItems.sort(
           (a, b) => a.segments[0].duration - b.segments[0].duration
         );
         break;
       }
       case '2': {
-        const filteredPrice = filteredTicket.sort((a, b) => a.price - b.price);
-        const addIndexToFilteredPrice = filteredTicket.map(
+        const filteredPrice = ticketsItems.sort((a, b) => a.price - b.price);
+        const addIndexToFilteredPrice = ticketsItems.map(
           (item, i) => (item.priceIdx = i)
         );
         // add price ID
-        const filteredDuration = filteredTicket.sort(
+        const filteredDuration = ticketsItems.sort(
           (a, b) => a.segments[0].duration - b.segments[0].duration
         );
-        const addIndexToFilteredDuration = filteredDuration.map(
+        const addIndexToFilteredDuration = ticketsItems.map(
           (item, i) => (item.durrIdx = i)
         );
         // add duration ID
-        const addResIndex = filteredTicket.map(
+        const addResIndex = ticketsItems.map(
           (item) => (item.res = item.priceIdx + item.durrIdx)
         );
-        const filteredFromResIndex = filteredTicket.sort(
+        const filteredFromResIndex = ticketsItems.sort(
           (a, b) => a.res - b.res
         );
         // sum result price and durr
