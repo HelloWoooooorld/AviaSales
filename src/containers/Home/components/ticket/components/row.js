@@ -1,6 +1,6 @@
 import { convertDurationToHours, convertDate, convertMinToHours } from '../../../../../untils/time';
 
-const Row = ({ segments, item }) => {
+const Row = ({ segments }) => {
     return (
         <>
             <div className='ticket__item-part' key={item.segments[0].duration}>
