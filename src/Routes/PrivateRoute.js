@@ -3,11 +3,9 @@ import {
     Redirect,
 } from "react-router-dom";
 
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({ component: Component, user, ...rest }) => (
     <Route {...rest} render={(props) => (
-        // isAuth ? <Component {...props} /> : <Redirect to='/login' />
-       <Redirect to='/' />
+        user ? <Component {...props} /> : <Redirect to='/login' />
     )} />
 )
 

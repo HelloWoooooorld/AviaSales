@@ -7,16 +7,20 @@ import PrivateRoute from './PrivateRoute';
 import Header from '../components/header';
 import Home from '../containers/Home/index';
 import Login from '../containers/Login/index';
+import { useAuth } from '../hooks/useAuth';
+
 
 const Routes = () => {
+    const { user, signout, login } = useAuth();
+
     return (
         <Router>
-            <Header/>
+            <Header signout={signout} user={user} />
             <Switch>
                 <Route path='/login'>
-                    <Login/>
+                    <Login login={login} signout={signout} />
                 </Route>
-                <Route exact path='/' component={Home} />
+                <PrivateRoute user={user} path='/' component={Home} />
             </Switch>
         </Router>
     )
