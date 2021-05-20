@@ -36,7 +36,6 @@ const Home = () => {
           filters.includes(item.segments[1].stops.length.toString())
         )
       );
-      console.log(filteredTicket);
     } else {
       setFilteredTicket(ticketsItems);
     }
@@ -82,8 +81,8 @@ const Home = () => {
         return result;
       }
     }
-    setTicketsItems([...result]);
     setFilteredTicket([...result]);
+    setTicketsItems([...result]);
   };
 
   useEffect(() => {
