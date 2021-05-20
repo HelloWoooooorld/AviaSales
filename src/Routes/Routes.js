@@ -12,13 +12,13 @@ import { useAuth } from '../hooks/useAuth';
 
 const Routes = () => {
     const { user, signout } = useAuth();
- 
+
     return (
         <Router>
-            <Header signout={signout} user={user}/>
+            <Header signout={signout} user={user} />
             <Switch>
                 <Route path='/login'>
-                    <Login/>
+                    <Login login={login} signout={signout} />
                 </Route>
                 <PrivateRoute user={user} path='/' component={Home} />
             </Switch>
